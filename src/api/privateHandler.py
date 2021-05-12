@@ -22,8 +22,8 @@ def get_ticker_list():
     return None
 
 
-def get_bithumb_key():
+def get_exchange_key(apiName):
     with open('./src/private.json') as jsonFile:
         privateData = json.load(jsonFile)
-        return privateData["pybithumb"]
+        return privateData["exchange"][apiName]["keys"]
     return None
